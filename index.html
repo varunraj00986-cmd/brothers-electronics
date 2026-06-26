@@ -5,24 +5,37 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>TV Repair in Delhi – Brothers Electronics | Baprola, West Delhi</title>
 <meta name="description" content="Expert TV repair in Delhi at your doorstep. Brothers Electronics – LED, Smart, OLED repair. Same-day service, 90-day warranty. Call 9891056716."/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0B1F3A;--blue:#1A5FCC;--electric:#2D8EFF;--sky:#60B4FF;
-  --gold:#FFB300;--white:#fff;--off:#F7FAFF;--grey:#64748B;
-  --border:#E2EBF6;--green:#16A34A;--red:#DC2626;
-  --card:#fff;--dark:#0B1F3A;
+  --primary:#1C57C2;--primary-dark:#1245A0;--primary-light:#EEF4FF;
+  --accent:#FF6B00;--accent-light:#FFF3EC;
+  --green:#16A34A;--green-light:#F0FDF4;
+  --navy:#0D1B38;--white:#fff;--off:#F5F7FA;
+  --grey:#64748B;--grey-light:#94A3B8;--border:#E2E8F0;
+  --red:#DC2626;--gold:#F59E0B;
+  --text:#1E293B;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--off);color:var(--navy);line-height:1.6;font-size:15px}
+body{font-family:'Inter',sans-serif;background:var(--off);color:var(--text);line-height:1.6;font-size:15px}
+
+/* ── TOP PHONE BAR ── */
+.top-bar{
+  background:var(--navy);padding:9px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:.8rem;color:rgba(255,255,255,.75);
+}
+.top-bar a{color:#fff;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:6px}
+.top-bar-left{display:flex;gap:20px;align-items:center}
+.top-badge{background:var(--green);color:#fff;padding:2px 10px;border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.5px}
 
 /* ── FLOATING WA ── */
 .wa-float{
-  position:fixed;bottom:24px;right:24px;z-index:999;
+  position:fixed;bottom:88px;right:20px;z-index:999;
   background:linear-gradient(135deg,#25D366,#128C7E);
-  color:#fff;width:56px;height:56px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  color:#fff;width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;
   text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.5);
   animation:wapulse 2.5s ease-in-out infinite;
 }
@@ -32,227 +45,286 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--navy);line
 /* ── NAV ── */
 nav{
   position:sticky;top:0;z-index:200;
-  background:var(--navy);height:62px;
+  background:#fff;height:62px;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 5%;box-shadow:0 2px 16px rgba(0,0,0,.3);
+  padding:0 5%;
+  box-shadow:0 1px 0 var(--border),0 2px 12px rgba(0,0,0,.06);
 }
-.nav-logo{font-family:'Syne',sans-serif;font-weight:900;font-size:1.2rem;color:#fff}
-.nav-logo span{color:var(--gold)}
-nav ul{list-style:none;display:flex;gap:24px}
-nav ul a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.86rem;font-weight:500;transition:color .2s}
-nav ul a:hover{color:var(--gold)}
-.nav-cta{background:var(--gold);color:#000!important;padding:7px 18px;border-radius:7px;font-weight:700!important}
+.nav-logo{font-family:'Poppins',sans-serif;font-weight:900;font-size:1.18rem;color:var(--navy);display:flex;align-items:center;gap:8px}
+.nav-logo-icon{width:34px;height:34px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.nav-logo span{color:var(--primary)}
+nav ul{list-style:none;display:flex;gap:6px;align-items:center}
+nav ul a{color:var(--grey);text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 12px;border-radius:7px;transition:background .15s,color .15s}
+nav ul a:hover{background:var(--primary-light);color:var(--primary)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:8px 18px!important;border-radius:9px!important;font-weight:700!important}
+.nav-cta:hover{background:#e05a00!important}
+.nav-phone{display:flex;align-items:center;gap:7px;font-weight:700;font-size:.88rem;color:var(--navy)!important;border:1.5px solid var(--border);border-radius:9px!important}
 
 /* ── HERO ── */
 .hero{
-  background:linear-gradient(135deg,#060E1F 0%,#0F2552 55%,#1A3A6E 100%);
-  padding:52px 5% 44px;position:relative;overflow:hidden;
+  background:#0B1729;
+  padding:0 5%;position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
-.hero::after{
-  content:'';position:absolute;right:-100px;top:-100px;
-  width:500px;height:500px;border-radius:50%;
-  background:radial-gradient(circle,rgba(45,142,255,.18),transparent 70%);
+.hero-bg-glow{
+  position:absolute;top:-120px;right:-80px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(28,87,194,.35) 0%,transparent 70%);
   pointer-events:none;
 }
-.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;position:relative;z-index:1;max-width:1200px}
-
-/* left */
-.hero-badge{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(45,142,255,.18);border:1px solid rgba(45,142,255,.35);
-  color:var(--sky);padding:5px 13px;border-radius:100px;
-  font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;
+.hero-bg-glow2{
+  position:absolute;bottom:-100px;left:10%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(28,87,194,.15) 0%,transparent 70%);
+  pointer-events:none;
 }
-.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#4ade80;animation:blink 1.5s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:14px;letter-spacing:-.5px}
-.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),#FF8C00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{color:rgba(255,255,255,.65);font-size:.96rem;margin-bottom:26px;max-width:500px}
-.hero-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
-.pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 14px;font-size:.8rem;color:rgba(255,255,255,.85);font-weight:600}
-.hero-stats{display:flex;gap:28px;margin-top:8px}
-.hstat{text-align:center}
-.hstat-n{font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;color:#fff;line-height:1}
-.hstat-l{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:2px;font-weight:600}
+.hero-grid{
+  display:grid;grid-template-columns:1fr 400px;
+  gap:0;align-items:stretch;
+  position:relative;z-index:1;max-width:1240px;margin:0 auto;
+}
 
-/* right — sticky booking card */
+/* hero left */
+.hero-left{padding:52px 48px 52px 0}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(28,87,194,.25);border:1px solid rgba(28,87,194,.5);
+  color:#7EB3FF;padding:6px 14px;border-radius:6px;
+  font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;
+}
+.hero-eyebrow .live-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 1.5s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(2.2rem,3.5vw,3.1rem);
+  font-weight:900;color:#fff;line-height:1.08;
+  margin-bottom:18px;letter-spacing:-1px;
+}
+.hero h1 .h1-block{display:block}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(90deg,#F59E0B,#FBBF24);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  color:rgba(255,255,255,.55);font-size:1rem;
+  margin-bottom:32px;max-width:460px;line-height:1.7;
+}
+.hero-sub strong{color:rgba(255,255,255,.85);font-weight:600}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.hero-pill{
+  display:flex;align-items:center;gap:7px;
+  padding:8px 16px;border-radius:7px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  font-size:.8rem;color:rgba(255,255,255,.8);font-weight:600;
+}
+.hero-pill .pill-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0}
+.hero-pill.accent{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.3);color:#FBBF24}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.07)}
+.hstat{text-align:center;padding:18px 8px;background:#0B1729}
+.hstat-n{font-family:'Poppins',sans-serif;font-size:1.55rem;font-weight:900;color:#fff;line-height:1}
+.hstat-l{font-size:.65rem;color:rgba(255,255,255,.35);margin-top:4px;font-weight:700;text-transform:uppercase;letter-spacing:.8px}
+
+/* hero right — visual panel */
+.hero-visual{
+  border-left:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;
+  padding:40px 0 40px 40px;
+  position:relative;
+}
+
+/* hero right — booking card */
 .book-card{
-  background:#fff;border-radius:18px;
-  box-shadow:0 8px 48px rgba(0,0,0,.25);
-  overflow:hidden;position:sticky;top:80px;
+  background:#fff;border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+  overflow:hidden;position:sticky;top:74px;
 }
 .book-card-head{
-  background:var(--navy);padding:20px 24px;
-  color:#fff;
+  background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+  padding:20px 22px;color:#fff;
 }
-.book-card-head h3{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;margin-bottom:4px}
-.book-card-head p{font-size:.82rem;color:rgba(255,255,255,.6)}
+.book-card-head h3{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:2px}
+.book-card-head p{font-size:.8rem;color:rgba(255,255,255,.65)}
 .bc-rating{display:flex;align-items:center;gap:8px;margin-top:8px}
-.bc-stars{color:var(--gold);font-size:.9rem;letter-spacing:1px}
-.bc-rtext{font-size:.78rem;color:rgba(255,255,255,.55)}
-.book-card-body{padding:22px 22px 26px}
-.bc-fg{margin-bottom:14px}
-.bc-fg label{display:block;font-size:.75rem;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.bc-stars{color:var(--gold);font-size:.88rem;letter-spacing:1px}
+.bc-rtext{font-size:.76rem;color:rgba(255,255,255,.55)}
+.book-card-body{padding:20px 20px 22px}
+.bc-fg{margin-bottom:12px}
+.bc-fg label{display:block;font-size:.72rem;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
 .bc-fg input,.bc-fg select{
-  width:100%;padding:10px 13px;
+  width:100%;padding:10px 12px;
   border:1.5px solid var(--border);border-radius:9px;
-  font-family:inherit;font-size:.88rem;color:var(--navy);
+  font-family:inherit;font-size:.87rem;color:var(--text);
   background:#fff;outline:none;transition:border-color .2s;
 }
-.bc-fg input:focus,.bc-fg select:focus{border-color:var(--electric)}
-.bc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bc-fg input:focus,.bc-fg select:focus{border-color:var(--primary)}
+.bc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .book-now-btn{
   width:100%;padding:13px;
-  background:linear-gradient(135deg,var(--gold),#FF8C00);
-  color:#000;border:none;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),#e05a00);
+  color:#fff;border:none;border-radius:10px;
   font-family:inherit;font-size:.95rem;font-weight:800;
-  cursor:pointer;box-shadow:0 4px 20px rgba(255,179,0,.35);
-  transition:transform .2s,box-shadow .2s;margin-top:4px;
+  cursor:pointer;box-shadow:0 4px 18px rgba(255,107,0,.35);
+  transition:transform .2s,box-shadow .2s;margin-top:2px;
 }
-.book-now-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,179,0,.55)}
+.book-now-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,107,0,.5)}
 .bc-call{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-top:14px;text-decoration:none;
-  color:var(--blue);font-weight:700;font-size:.9rem;
+  margin-top:10px;text-decoration:none;
+  color:var(--primary);font-weight:700;font-size:.88rem;
   border:1.5px solid var(--border);border-radius:9px;padding:10px;
-  transition:background .2s,border-color .2s;
+  transition:background .2s;
 }
-.bc-call:hover{background:var(--off);border-color:var(--electric)}
+.bc-call:hover{background:var(--primary-light)}
 .bc-promise{
-  margin-top:18px;display:flex;flex-direction:column;gap:8px;
-  border-top:1px solid var(--border);padding-top:16px;
+  margin-top:14px;display:flex;flex-direction:column;gap:7px;
+  border-top:1px solid var(--border);padding-top:14px;
 }
-.bc-p{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--grey);font-weight:500}
-.bc-p span{width:22px;height:22px;border-radius:50%;background:#E8F5E9;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
-.bc-success{display:none;text-align:center;padding:20px;background:#E8F5E9;border-radius:10px;color:var(--green);font-weight:700;font-size:.9rem;margin-top:8px}
+.bc-p{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--grey);font-weight:500}
+.bc-p .bc-check{color:var(--green);font-weight:800;font-size:.85rem}
+.bc-success{display:none;text-align:center;padding:18px;background:var(--green-light);border-radius:10px;color:var(--green);font-weight:700;font-size:.88rem;margin-top:8px;border:1px solid #bbf7d0}
 
 /* ── MARQUEE ── */
-.marquee-wrap{background:var(--blue);overflow:hidden;padding:11px 0;border-top:1px solid rgba(255,255,255,.1)}
-.marquee-track{display:inline-flex;animation:marquee 22s linear infinite;white-space:nowrap}
+.marquee-wrap{background:var(--primary);overflow:hidden;padding:10px 0}
+.marquee-track{display:inline-flex;animation:marquee 24s linear infinite;white-space:nowrap}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.mitem{display:inline-flex;align-items:center;gap:8px;padding:0 24px;font-size:.82rem;font-weight:700;color:rgba(255,255,255,.92);letter-spacing:.3px}
-.mdot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4)}
+.mitem{display:inline-flex;align-items:center;gap:8px;padding:0 22px;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:.3px}
+.mdot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35)}
 
 /* ── MAIN LAYOUT ── */
-.page-body{display:grid;grid-template-columns:1fr 380px;gap:32px;padding:40px 5%;max-width:1300px;margin:0 auto;align-items:start}
+.page-body{display:grid;grid-template-columns:1fr 380px;gap:28px;padding:32px 5%;max-width:1300px;margin:0 auto;align-items:start}
 .content{min-width:0}
-.sidebar{position:sticky;top:80px}
+.sidebar{position:sticky;top:74px}
 
-/* ── SECTIONS ── */
-.sec{background:#fff;border-radius:16px;border:1px solid var(--border);margin-bottom:28px;overflow:hidden}
-.sec-head{padding:22px 26px 0;border-bottom:1px solid var(--border);margin-bottom:0}
-.sec-head h2{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.sec-tag{font-size:.7rem;background:#EEF4FF;color:var(--blue);padding:3px 10px;border-radius:100px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;vertical-align:middle}
+/* ── SECTION CARDS ── */
+.sec{background:#fff;border-radius:16px;border:1px solid var(--border);margin-bottom:20px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.sec-head{padding:20px 24px 16px;border-bottom:1px solid var(--border)}
+.sec-head h2{font-family:'Poppins',sans-serif;font-size:1.15rem;font-weight:800;margin-bottom:0;display:flex;align-items:center;gap:10px;color:var(--navy)}
+.sec-tag{font-size:.68rem;background:var(--primary-light);color:var(--primary);padding:3px 10px;border-radius:100px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.sec-tag-green{font-size:.68rem;background:var(--green-light);color:var(--green);padding:3px 10px;border-radius:100px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
 
-/* ── SERVICE CARDS (Urban Company style) ── */
-.svc-list{padding:0 26px 20px}
+/* ── SERVICE CARDS (SuperSavvy style) ── */
+.svc-list{padding:0 0 4px}
 .svc-item{
-  display:flex;align-items:center;gap:16px;
-  padding:18px 0;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:14px;
+  padding:16px 24px;border-bottom:1px solid var(--border);
+  transition:background .15s;
 }
 .svc-item:last-child{border-bottom:none}
+.svc-item:hover{background:#FAFCFF}
 .svc-img{
-  width:90px;height:70px;border-radius:10px;flex-shrink:0;overflow:hidden;
-  background:linear-gradient(135deg,#EEF4FF,#D6E8FF);
-  display:flex;align-items:center;justify-content:center;font-size:2rem;
+  width:80px;height:64px;border-radius:10px;flex-shrink:0;overflow:hidden;
+  background:linear-gradient(135deg,var(--primary-light),#D6E8FF);
+  display:flex;align-items:center;justify-content:center;font-size:1.8rem;
 }
 .svc-info{flex:1;min-width:0}
-.svc-name{font-weight:700;font-size:.95rem;margin-bottom:3px}
-.svc-desc{font-size:.8rem;color:var(--grey);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.svc-name{font-weight:700;font-size:.93rem;margin-bottom:2px;color:var(--navy)}
+.svc-desc{font-size:.78rem;color:var(--grey);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .svc-price{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
 .price-now{font-weight:800;font-size:1rem;color:var(--navy)}
-.price-old{font-size:.82rem;color:var(--grey);text-decoration:line-through}
-.price-save{font-size:.75rem;background:#FEF3C7;color:#92400E;padding:2px 8px;border-radius:100px;font-weight:700}
+.price-old{font-size:.8rem;color:var(--grey-light);text-decoration:line-through}
+.price-save{font-size:.7rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:100px;font-weight:700}
 .add-btn{
-  flex-shrink:0;background:var(--blue);color:#fff;
-  border:none;padding:8px 20px;border-radius:8px;
+  flex-shrink:0;
+  background:#fff;color:var(--primary);
+  border:2px solid var(--primary);
+  padding:8px 20px;border-radius:9px;
   font-family:inherit;font-size:.85rem;font-weight:700;cursor:pointer;
-  transition:background .2s,transform .15s;
+  transition:background .15s,color .15s,transform .12s;
 }
-.add-btn:hover{background:#1045a8;transform:scale(1.04)}
-.add-btn.added{background:var(--green)}
+.add-btn:hover{background:var(--primary);color:#fff;transform:scale(1.03)}
+.add-btn.added{background:var(--green);color:#fff;border-color:var(--green)}
 
-/* ── RATING BAR ── */
-.rating-sec{padding:24px 26px}
+/* ── RATING BARS ── */
+.rating-sec{padding:22px 24px}
 .big-rating{display:flex;gap:28px;align-items:center;margin-bottom:22px;flex-wrap:wrap}
-.big-num{font-family:'Syne',sans-serif;font-size:3.2rem;font-weight:900;color:var(--navy);line-height:1}
-.big-stars{color:var(--gold);font-size:1.2rem;letter-spacing:2px;margin-bottom:4px}
-.big-count{font-size:.85rem;color:var(--grey)}
+.big-num{font-family:'Poppins',sans-serif;font-size:3rem;font-weight:900;color:var(--navy);line-height:1}
+.big-stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px;margin-bottom:4px}
+.big-count{font-size:.83rem;color:var(--grey)}
 .bar-rows{flex:1;min-width:180px}
-.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:7px}
-.bar-lbl{font-size:.8rem;font-weight:600;color:var(--grey);width:16px;text-align:right}
-.bar-track{flex:1;height:7px;background:#E2EBF6;border-radius:100px;overflow:hidden}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.bar-lbl{font-size:.78rem;font-weight:600;color:var(--grey);width:14px;text-align:right}
+.bar-track{flex:1;height:6px;background:#E2E8F0;border-radius:100px;overflow:hidden}
 .bar-fill{height:100%;background:var(--gold);border-radius:100px}
-.bar-cnt{font-size:.75rem;color:var(--grey);width:24px}
+.bar-cnt{font-size:.73rem;color:var(--grey);width:22px}
 .reviews-list{display:flex;flex-direction:column;gap:0}
-.rev{padding:16px 0;border-bottom:1px solid var(--border)}
-.rev:last-child{border-bottom:none}
+.rev{padding:16px 24px;border-top:1px solid var(--border)}
 .rev-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.rev-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--electric));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0}
-.rev-name{font-weight:700;font-size:.88rem}
-.rev-date{font-size:.75rem;color:var(--grey)}
-.rev-stars{color:var(--gold);font-size:.8rem;letter-spacing:1px}
-.rev-text{font-size:.87rem;color:#374151;line-height:1.55}
-.rev-svc{font-size:.75rem;color:var(--grey);margin-top:4px}
+.rev-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#4A8EFF);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex-shrink:0}
+.rev-name{font-weight:700;font-size:.87rem;color:var(--navy)}
+.rev-date{font-size:.73rem;color:var(--grey-light)}
+.rev-stars{color:var(--gold);font-size:.78rem;letter-spacing:1px}
+.rev-text{font-size:.86rem;color:#475569;line-height:1.55}
+.rev-svc{font-size:.73rem;color:var(--grey);margin-top:4px;font-style:italic}
 
 /* ── FAQ ── */
-.faq-list{padding:6px 26px 22px}
+.faq-list{padding:4px 24px 20px}
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-item:last-child{border-bottom:none}
 .faq-q{
   display:flex;justify-content:space-between;align-items:center;
-  padding:15px 0;cursor:pointer;font-weight:600;font-size:.92rem;
-  user-select:none;gap:12px;
+  padding:15px 0;cursor:pointer;font-weight:600;font-size:.9rem;
+  user-select:none;gap:12px;color:var(--navy);
 }
-.faq-q:hover{color:var(--blue)}
-.faq-arrow{font-size:.8rem;color:var(--grey);flex-shrink:0;transition:transform .25s}
-.faq-a{display:none;padding:0 0 14px;font-size:.87rem;color:var(--grey);line-height:1.65}
+.faq-q:hover{color:var(--primary)}
+.faq-arrow{
+  width:24px;height:24px;border-radius:50%;border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;color:var(--grey);flex-shrink:0;transition:all .25s;
+}
+.faq-a{display:none;padding:0 0 14px;font-size:.85rem;color:var(--grey);line-height:1.65}
 .faq-item.open .faq-a{display:block}
-.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--primary);border-color:var(--primary);color:#fff}
 
-/* ── COMPARE TABLE ── */
-.compare-table{width:100%;border-collapse:collapse;font-size:.88rem;margin:0 26px;width:calc(100% - 52px);margin-bottom:22px}
-.compare-table th{padding:12px 14px;text-align:left;background:var(--off);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--grey)}
-.compare-table th:last-child,.compare-table th:nth-child(2){text-align:center}
-.compare-table td{padding:11px 14px;border-top:1px solid var(--border)}
-.compare-table td:last-child,.compare-table td:nth-child(2){text-align:center}
-.compare-table tr:hover td{background:#F8FBFF}
+/* ── COMPARE TABLE (SuperSavvy style) ── */
+.compare-wrap{padding:0 24px 24px}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.87rem;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.compare-table th{padding:12px 16px;background:var(--off);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--grey);border-bottom:1px solid var(--border)}
+.compare-table th:nth-child(2){color:var(--primary);background:var(--primary-light)}
+.compare-table td{padding:11px 16px;border-top:1px solid var(--border)}
+.compare-table td:nth-child(2){background:#FAFEFF;font-weight:700;color:var(--primary)}
+.compare-table tr:last-child td{border-bottom:none}
 .yes{color:var(--green);font-weight:700}
-.no{color:var(--red);font-weight:700}
-.highlight-col{background:#FFFBF0!important;font-weight:700}
+.no{color:var(--red);font-weight:600}
 
-/* ── PRICE LIST ── */
-.price-table{width:calc(100%-52px);margin:0 26px 22px;border-collapse:collapse;font-size:.87rem}
-.price-table tr{border-top:1px solid var(--border)}
-.price-table tr:first-child{border-top:none}
-.price-table td{padding:11px 14px}
-.price-table td:last-child{text-align:right;font-weight:700;color:var(--blue)}
+/* ── PRICE TABLE ── */
+.price-wrap{padding:0 24px 20px}
+.price-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.price-table tr{border-bottom:1px solid var(--border)}
+.price-table tr:last-child{border-bottom:none}
+.price-table td{padding:11px 4px}
+.price-table td:last-child{text-align:right;font-weight:700;color:var(--primary)}
 
 /* ── SIDEBAR ── */
-.sid-card{background:#fff;border-radius:16px;border:1px solid var(--border);padding:22px;margin-bottom:20px}
-.sid-card h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:16px}
+.sid-card{background:#fff;border-radius:16px;border:1px solid var(--border);padding:20px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.sid-card h3{font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:800;margin-bottom:14px;color:var(--navy)}
 .trust-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
 .trust-item:last-child{border-bottom:none}
-.t-icon{width:40px;height:40px;border-radius:10px;background:var(--off);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.t-title{font-weight:700;font-size:.86rem;margin-bottom:2px}
-.t-sub{font-size:.78rem;color:var(--grey)}
-.call-card{background:var(--navy);border-radius:16px;padding:22px;margin-bottom:20px;text-align:center}
-.call-card h3{color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;margin-bottom:6px}
-.call-card p{color:rgba(255,255,255,.55);font-size:.8rem;margin-bottom:16px}
-.call-big{display:block;text-decoration:none;background:var(--gold);color:#000;font-weight:800;font-size:1.05rem;padding:12px;border-radius:10px;margin-bottom:10px;transition:transform .2s}
+.t-icon{width:38px;height:38px;border-radius:9px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.t-title{font-weight:700;font-size:.84rem;margin-bottom:2px;color:var(--navy)}
+.t-sub{font-size:.76rem;color:var(--grey)}
+.call-card{background:linear-gradient(135deg,var(--navy),#1A3370);border-radius:16px;padding:22px;margin-bottom:18px;text-align:center;box-shadow:0 4px 20px rgba(13,27,56,.3)}
+.call-card h3{color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:.95rem;margin-bottom:4px}
+.call-card p{color:rgba(255,255,255,.5);font-size:.78rem;margin-bottom:14px}
+.call-big{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:var(--gold);color:#000;font-weight:800;font-size:1.02rem;padding:12px;border-radius:10px;margin-bottom:9px;transition:transform .2s}
 .call-big:hover{transform:scale(1.02)}
-.wa-btn{display:block;text-decoration:none;background:#25D366;color:#fff;font-weight:700;font-size:.9rem;padding:10px;border-radius:10px;transition:transform .2s}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:#25D366;color:#fff;font-weight:700;font-size:.88rem;padding:10px;border-radius:10px;transition:transform .2s}
 .wa-btn:hover{transform:scale(1.02)}
-.areas-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.area-chip{background:var(--off);border:1px solid var(--border);border-radius:100px;padding:5px 12px;font-size:.78rem;font-weight:600;color:var(--navy);cursor:default;transition:background .15s}
-.area-chip:hover{background:#E0EDFF;border-color:var(--electric)}
+.areas-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.area-chip{background:var(--off);border:1px solid var(--border);border-radius:100px;padding:5px 12px;font-size:.77rem;font-weight:600;color:var(--text);cursor:default;transition:background .15s}
+.area-chip:hover{background:var(--primary-light);border-color:var(--primary);color:var(--primary)}
+
+/* ── BRANDS GRID ── */
+.brands-grid{display:flex;flex-wrap:wrap;gap:8px;padding:16px 24px 22px}
+.brand-chip{padding:6px 14px;background:var(--off);border:1px solid var(--border);border-radius:8px;font-size:.8rem;font-weight:600;color:var(--text)}
 
 /* ── CART TOAST ── */
 .cart-toast{
-  position:fixed;bottom:96px;right:24px;
+  position:fixed;bottom:100px;right:20px;
   background:var(--navy);color:#fff;
-  padding:12px 20px;border-radius:12px;
-  font-size:.85rem;font-weight:600;
+  padding:11px 18px;border-radius:12px;
+  font-size:.84rem;font-weight:600;
   box-shadow:0 8px 32px rgba(0,0,0,.3);
   opacity:0;transform:translateY(12px);
   transition:opacity .3s,transform .3s;
@@ -261,68 +333,231 @@ nav ul a:hover{color:var(--gold)}
 .cart-toast.show{opacity:1;transform:translateY(0)}
 
 /* ── FOOTER ── */
-footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-size:.83rem}
+footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-size:.82rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto 28px}
-.f-logo{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:10px}
+.f-logo{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.f-logo-icon{width:30px;height:30px;background:var(--primary);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
 .f-logo span{color:var(--gold)}
-.footer-grid h4{color:rgba(255,255,255,.8);font-size:.85rem;font-weight:700;margin-bottom:12px}
+.footer-grid h4{color:rgba(255,255,255,.8);font-size:.83rem;font-weight:700;margin-bottom:12px}
 .footer-grid ul{list-style:none}
 .footer-grid ul li{margin-bottom:8px}
-.footer-grid ul a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem}
+.footer-grid ul a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem}
 .footer-grid ul a:hover{color:rgba(255,255,255,.9)}
-.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;text-align:center;max-width:1200px;margin:0 auto;font-size:.78rem}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;text-align:center;max-width:1200px;margin:0 auto;font-size:.77rem}
 
 /* ── MOBILE ── */
 @media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr}
-  .book-card{display:none}
-  .page-body{grid-template-columns:1fr;padding:20px 4%}
-  .sidebar{display:none}
+  /* Top bar & nav */
+  .top-bar{display:none}
   nav ul{display:none}
-  .footer-grid{grid-template-columns:1fr}
+  .nav-mobile-right{display:flex}
+  .nav-logo{font-size:1rem}
+  .nav-logo-icon{width:30px;height:30px;font-size:.9rem}
+
+  /* Hero */
+  .hero{padding:0 4%}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-left{padding:28px 0 24px}
+  .hero-eyebrow{font-size:.68rem;padding:5px 11px;margin-bottom:16px}
+  .hero h1{font-size:clamp(1.7rem,7vw,2.2rem);letter-spacing:-.5px;margin-bottom:14px}
+  .hero-sub{font-size:.9rem;margin-bottom:24px}
+  .hero-pills{gap:8px;margin-bottom:28px}
+  .hero-pill{font-size:.75rem;padding:7px 12px}
+  .hero-stats{grid-template-columns:repeat(4,1fr)}
+  .hstat{padding:14px 4px}
+  .hstat-n{font-size:1.2rem}
+  .hstat-l{font-size:.58rem;letter-spacing:.4px}
+  .hero-visual{display:none}
+  .book-card{display:none}
+
+  /* Mobile booking form — shown inline below hero on mobile */
+  .mobile-booking-section{display:block!important}
+
+  /* Page body */
+  .page-body{grid-template-columns:1fr;padding:14px 4%;gap:0}
+  .sidebar{display:none}
+
+  /* Section cards */
+  .sec{border-radius:12px;margin-bottom:14px}
+  .sec-head{padding:16px 16px 12px}
+  .sec-head h2{font-size:1rem}
+
+  /* Service items */
+  .svc-item{padding:13px 16px;gap:12px}
+  .svc-img{width:60px;height:52px;font-size:1.5rem}
+  .svc-name{font-size:.88rem}
+  .svc-desc{font-size:.75rem}
+  .price-now{font-size:.92rem}
+  .add-btn{padding:7px 14px;font-size:.8rem}
+
+  /* Rating / reviews */
+  .rating-sec{padding:16px}
+  .big-rating{gap:16px}
+  .big-num{font-size:2.4rem}
+  .rev{padding:14px 16px}
+
+  /* FAQ */
+  .faq-list{padding:4px 16px 16px}
+  .faq-q{font-size:.85rem;padding:13px 0}
+
+  /* Compare & price tables */
+  .compare-wrap{padding:0 16px 16px;overflow-x:auto}
+  .compare-table{font-size:.78rem;min-width:460px}
+  .compare-table th,.compare-table td{padding:9px 10px}
+  .price-wrap{padding:0 16px 16px}
+  .price-table{font-size:.82rem}
+  .price-table td{padding:10px 4px}
+
+  /* Areas */
+  .areas-list{padding:0 16px}
+  .area-chip{font-size:.72rem;padding:4px 10px}
+
+  /* Brands */
+  .brands-grid{padding:12px 16px 18px;gap:6px}
+  .brand-chip{font-size:.75rem;padding:5px 11px}
+
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  footer{padding:28px 5% 90px}
+
+  /* Mobile bottom bar */
   .mobile-book-bar{
     position:fixed;bottom:0;left:0;right:0;z-index:500;
     background:#fff;border-top:1px solid var(--border);
-    padding:12px 20px;display:flex;gap:10px;
+    padding:10px 16px;display:flex;gap:10px;
     box-shadow:0 -4px 20px rgba(0,0,0,.1);
+    padding-bottom:calc(10px + env(safe-area-inset-bottom));
   }
-  .mob-call{flex:1;padding:12px;border:1.5px solid var(--navy);border-radius:9px;background:#fff;color:var(--navy);font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;text-align:center}
-  .mob-book{flex:2;padding:12px;background:linear-gradient(135deg,var(--gold),#FF8C00);color:#000;border:none;border-radius:9px;font-family:inherit;font-weight:800;font-size:.9rem;cursor:pointer;text-decoration:none;text-align:center}
+  .mob-call{
+    flex:1;padding:13px 8px;
+    border:1.5px solid var(--navy);border-radius:10px;
+    background:#fff;color:var(--navy);
+    font-family:inherit;font-weight:700;font-size:.9rem;
+    cursor:pointer;text-decoration:none;text-align:center;
+    display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  .mob-book{
+    flex:2;padding:13px 8px;
+    background:linear-gradient(135deg,var(--accent),#e05a00);
+    color:#fff;border:none;border-radius:10px;
+    font-family:inherit;font-weight:800;font-size:.9rem;
+    cursor:pointer;text-decoration:none;text-align:center;
+    display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+
+  /* WA float — move up more so it clears bottom bar */
+  .wa-float{bottom:80px;right:14px;width:48px;height:48px;font-size:1.25rem}
+  .cart-toast{bottom:80px;right:14px;font-size:.8rem;padding:9px 14px;max-width:200px}
 }
-@media(min-width:901px){.mobile-book-bar{display:none}}
+
+/* Very small phones */
+@media(max-width:380px){
+  .hero h1{font-size:1.55rem}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .hstat-n{font-size:1.1rem}
+  .mob-call,.mob-book{font-size:.82rem}
+  .svc-item{flex-wrap:wrap}
+  .add-btn{width:100%;margin-top:6px}
+}
+
+@media(min-width:901px){.mobile-book-bar{display:none}.mobile-booking-section{display:none!important}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── HAMBURGER & MOBILE DRAWER ── */
+.nav-mobile-right{display:none;align-items:center;gap:10px}
+.nav-mob-call{background:var(--primary);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:7px 13px;border-radius:8px;white-space:nowrap}
+.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px}
+.hamburger span{display:block;width:22px;height:2.5px;background:var(--navy);border-radius:2px;transition:all .25s}
+.mobile-nav-drawer{display:none;flex-direction:column;background:#fff;border-bottom:1px solid var(--border);padding:8px 4%;gap:0;box-shadow:0 4px 16px rgba(0,0,0,.08);position:sticky;top:56px;z-index:199}
+.mobile-nav-drawer.open{display:flex}
+.mobile-nav-drawer a{padding:13px 0;font-weight:600;font-size:.9rem;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
+.mobile-nav-drawer a:last-child{border-bottom:none}
+.mobile-nav-drawer .drawer-call{color:var(--primary);font-weight:700}
+
+/* ── MOBILE BOOKING SECTION (shown only on mobile, below hero) ── */
+.mobile-booking-section{
+  display:none;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  padding:20px 4%;
+}
+.mobile-booking-section .book-card{
+  display:block!important;
+  position:static;
+  box-shadow:0 4px 24px rgba(0,0,0,.1);
+  border-radius:16px;
+  overflow:hidden;
+}
+.mobile-booking-section .bc-row{grid-template-columns:1fr}
 </style>
 </head>
 <body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <span>📍 Baprola, West Delhi</span>
+    <span class="top-badge">⚡ Open Today</span>
+  </div>
+  <a href="tel:+919891056716">📞 98910 56716 — Call Now</a>
+</div>
 
 <a href="https://wa.me/919891056716" class="wa-float" target="_blank" title="WhatsApp">💬</a>
 <div class="cart-toast" id="cartToast">✅ Added! We'll call to confirm.</div>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Brothers <span>Electronics</span></div>
-  <ul>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">📺</div>
+    Brothers <span>Electronics</span>
+  </div>
+  <!-- Desktop nav links -->
+  <ul id="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:+919891056716" class="nav-phone">📞 98910 56716</a></li>
     <li><a href="#book-form" class="nav-cta">Book Repair</a></li>
   </ul>
+  <!-- Mobile: phone + hamburger -->
+  <div class="nav-mobile-right">
+    <a href="tel:+919891056716" class="nav-mob-call">📞 Call</a>
+    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="mobile-nav-drawer" id="mobile-nav-drawer">
+  <a href="#services" onclick="closeMobileNav()">🔧 Services</a>
+  <a href="#pricing" onclick="closeMobileNav()">💰 Pricing</a>
+  <a href="#reviews" onclick="closeMobileNav()">⭐ Reviews</a>
+  <a href="#faq" onclick="closeMobileNav()">❓ FAQ</a>
+  <a href="#contact" onclick="closeMobileNav()">📍 Contact</a>
+  <a href="tel:+919891056716" class="drawer-call">📞 Call: 98910 56716</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-glow2"></div>
   <div class="hero-grid">
-    <div>
-      <div class="hero-badge">🟢 Open Today – Delhi NCR</div>
-      <h1>TV Repair at<br><em>Your Doorstep</em></h1>
-      <p class="hero-sub">Brothers Electronics — Baprola, West Delhi. All brands repaired at home or workshop. <strong style="color:#fff">Same-day service available.</strong></p>
+
+    <!-- LEFT: Copy -->
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span class="live-dot"></span>Delhi NCR &nbsp;·&nbsp; Open 9 AM – 7 PM</div>
+      <h1>
+        <span class="h1-block">Expert TV Repair</span>
+        <em>At Your Doorstep</em>
+      </h1>
+      <p class="hero-sub">Brothers Electronics, Baprola — West Delhi ka trusted repair centre. Har brand, ghar pe service, <strong>same-day available.</strong></p>
       <div class="hero-pills">
-        <div class="pill">⚡ Same-Day Service</div>
-        <div class="pill">🛡️ 90-Day Warranty</div>
-        <div class="pill">🏠 Home Visit</div>
-        <div class="pill">✅ Genuine Parts</div>
+        <div class="hero-pill"><span class="pill-dot"></span>Same-Day Service</div>
+        <div class="hero-pill"><span class="pill-dot"></span>Free Home Visit</div>
+        <div class="hero-pill accent">🛡️ 90-Day Warranty</div>
+        <div class="hero-pill"><span class="pill-dot"></span>Genuine Parts</div>
       </div>
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-n">500+</div><div class="hstat-l">TVs Repaired</div></div>
@@ -332,11 +567,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
       </div>
     </div>
 
+    <!-- RIGHT: Visual + Booking Card -->
+    <div class="hero-visual">
+
     <!-- STICKY BOOKING CARD -->
     <div class="book-card" id="book-form">
       <div class="book-card-head">
         <h3>📺 Book TV Repair</h3>
-        <p>Technician at your home today</p>
+        <p>Technician aaj aapke ghar aayega</p>
         <div class="bc-rating">
           <span class="bc-stars">★★★★★</span>
           <span class="bc-rtext">4.9 · 500+ repairs done</span>
@@ -344,7 +582,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
       </div>
       <div class="book-card-body">
         <div class="bc-row">
-          <div class="bc-fg"><label>Your Name *</label><input type="text" id="b-name" placeholder="Rahul Sharma"/></div>
+          <div class="bc-fg"><label>Aapka Naam *</label><input type="text" id="b-name" placeholder="Rahul Sharma"/></div>
           <div class="bc-fg"><label>Phone *</label><input type="tel" id="b-phone" placeholder="9876543210"/></div>
         </div>
         <div class="bc-fg">
@@ -378,15 +616,70 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
         </div>
         <div class="bc-fg"><label>Problem</label><input type="text" id="b-prob" placeholder="e.g. No display, no sound…"/></div>
         <button class="book-now-btn" onclick="bookNow()">📅 Book Now – Free Consultation</button>
-        <a href="tel:+919891056716" class="bc-call">📞 Call: 98910 56716</a>
+        <a href="tel:+919891056716" class="bc-call">📞 Call Directly: 98910 56716</a>
         <div class="bc-promise">
-          <div class="bc-p"><span>✓</span> Free diagnosis at your home</div>
-          <div class="bc-p"><span>✓</span> 90-day repair warranty</div>
-          <div class="bc-p"><span>✓</span> Transparent pricing, no hidden charges</div>
-          <div class="bc-p"><span>✓</span> Genuine spare parts used</div>
+          <div class="bc-p"><span class="bc-check">✓</span> Free diagnosis at your home</div>
+          <div class="bc-p"><span class="bc-check">✓</span> 90-day repair warranty</div>
+          <div class="bc-p"><span class="bc-check">✓</span> Transparent pricing, no hidden charges</div>
+          <div class="bc-p"><span class="bc-check">✓</span> Genuine spare parts only</div>
         </div>
         <div class="bc-success" id="bc-success">🎉 Booking received! We'll call you within 60 mins.</div>
       </div>
+    </div>
+    </div><!-- /hero-visual -->
+  </div><!-- /hero-grid -->
+</div><!-- /hero -->
+
+<!-- MOBILE BOOKING SECTION (shown only on phones) -->
+<div class="mobile-booking-section">
+  <div class="book-card">
+    <div class="book-card-head">
+      <h3>📺 Book TV Repair</h3>
+      <p>Technician aaj aapke ghar aayega</p>
+      <div class="bc-rating">
+        <span class="bc-stars">★★★★★</span>
+        <span class="bc-rtext">4.9 · 500+ repairs done</span>
+      </div>
+    </div>
+    <div class="book-card-body">
+      <div class="bc-fg"><label>Aapka Naam *</label><input type="text" id="mb-name" placeholder="Rahul Sharma"/></div>
+      <div class="bc-fg"><label>Phone *</label><input type="tel" id="mb-phone" placeholder="9876543210"/></div>
+      <div class="bc-fg">
+        <label>TV Brand *</label>
+        <select id="mb-brand">
+          <option value="">Select brand…</option>
+          <option>Samsung</option><option>LG</option><option>Sony</option>
+          <option>Panasonic</option><option>MI / Xiaomi</option><option>OnePlus</option>
+          <option>TCL</option><option>Vu</option><option>Philips</option><option>Other</option>
+        </select>
+      </div>
+      <div class="bc-fg">
+        <label>Service *</label>
+        <select id="mb-svc">
+          <option value="">Select…</option>
+          <option>Home Visit</option>
+          <option>Drop at Workshop</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="bc-fg">
+        <label>Time Slot</label>
+        <select id="mb-slot">
+          <option value="">Any time</option>
+          <option>Morning 9–12</option>
+          <option>Afternoon 12–4</option>
+          <option>Evening 4–7</option>
+        </select>
+      </div>
+      <div class="bc-fg"><label>Problem</label><input type="text" id="mb-prob" placeholder="e.g. No display, no sound…"/></div>
+      <button class="book-now-btn" onclick="bookNowMobile()">📅 Book Now – Free Consultation</button>
+      <a href="tel:+919891056716" class="bc-call">📞 Call: 98910 56716</a>
+      <div class="bc-promise">
+        <div class="bc-p"><span class="bc-check">✓</span> Free diagnosis at your home</div>
+        <div class="bc-p"><span class="bc-check">✓</span> 90-day repair warranty</div>
+        <div class="bc-p"><span class="bc-check">✓</span> Transparent pricing, no hidden charges</div>
+      </div>
+      <div class="bc-success" id="mb-success">🎉 Booking received! We'll call you within 60 mins.</div>
     </div>
   </div>
 </div>
@@ -397,7 +690,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
     <span class="mitem">📺 Samsung Repair<span class="mdot"></span></span>
     <span class="mitem">⚡ Same-Day Service<span class="mdot"></span></span>
     <span class="mitem">🔧 LG · Sony · MI · OnePlus<span class="mdot"></span></span>
-    <span class="mitem">🏠 Home Visit Available<span class="mdot"></span></span>
+    <span class="mitem">🏠 Home Visit Free<span class="mdot"></span></span>
     <span class="mitem">🛡️ 90-Day Warranty<span class="mdot"></span></span>
     <span class="mitem">✅ Verified Technicians<span class="mdot"></span></span>
     <span class="mitem">📺 Smart TV · LED · OLED<span class="mdot"></span></span>
@@ -405,7 +698,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
     <span class="mitem">📺 Samsung Repair<span class="mdot"></span></span>
     <span class="mitem">⚡ Same-Day Service<span class="mdot"></span></span>
     <span class="mitem">🔧 LG · Sony · MI · OnePlus<span class="mdot"></span></span>
-    <span class="mitem">🏠 Home Visit Available<span class="mdot"></span></span>
+    <span class="mitem">🏠 Home Visit Free<span class="mdot"></span></span>
     <span class="mitem">🛡️ 90-Day Warranty<span class="mdot"></span></span>
     <span class="mitem">✅ Verified Technicians<span class="mdot"></span></span>
     <span class="mitem">📺 Smart TV · LED · OLED<span class="mdot"></span></span>
@@ -427,7 +720,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <div class="svc-img">🔌</div>
           <div class="svc-info">
             <div class="svc-name">TV Check-Up & Diagnosis</div>
-            <div class="svc-desc">Full diagnostic of your TV — power board, display, motherboard. Visit fee adjusted in final repair quote.</div>
+            <div class="svc-desc">Full diagnostic — power board, display, motherboard. Visit fee adjusted in final repair quote. CRT TVs covered nahi.</div>
             <div class="svc-price">
               <span class="price-now">₹249</span>
               <span class="price-old">₹399</span>
@@ -440,7 +733,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <div class="svc-img">🖥️</div>
           <div class="svc-info">
             <div class="svc-name">Screen / Display Repair</div>
-            <div class="svc-desc">Black screen, dead pixels, backlight failure, vertical/horizontal lines, discolouration — all display issues.</div>
+            <div class="svc-desc">Black screen, dead pixels, backlight failure, vertical/horizontal lines, discolouration — sab display issues.</div>
             <div class="svc-price">
               <span class="price-now">₹799</span>
               <span class="price-old">₹999</span>
@@ -453,7 +746,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <div class="svc-img">🔊</div>
           <div class="svc-info">
             <div class="svc-name">Sound / Audio Repair</div>
-            <div class="svc-desc">No sound, distorted audio, one speaker not working, HDMI audio sync issues, speaker replacement.</div>
+            <div class="svc-desc">No sound, distorted audio, ek speaker band, HDMI audio sync issues, speaker replacement.</div>
             <div class="svc-price">
               <span class="price-now">₹499</span>
               <span class="price-old">₹699</span>
@@ -466,7 +759,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <div class="svc-img">⚡</div>
           <div class="svc-info">
             <div class="svc-name">Power Board Repair</div>
-            <div class="svc-desc">TV won't turn on, standby light blinking, sudden shutdowns, power board or SMPS replacement.</div>
+            <div class="svc-desc">TV on nahi ho rahi, standby light blink kar raha, sudden shutdown, power board ya SMPS replacement.</div>
             <div class="svc-price">
               <span class="price-now">₹699</span>
               <span class="price-old">₹899</span>
@@ -479,7 +772,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <div class="svc-img">🌐</div>
           <div class="svc-info">
             <div class="svc-name">Smart TV Software Fix</div>
-            <div class="svc-desc">App crashes, Wi-Fi not connecting, firmware update, Android TV / webOS / Tizen troubleshooting.</div>
+            <div class="svc-desc">App crashes, Wi-Fi connect nahi, firmware update, Android TV / webOS / Tizen troubleshooting.</div>
             <div class="svc-price">
               <span class="price-now">₹399</span>
               <span class="price-old">₹549</span>
@@ -492,7 +785,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <div class="svc-img">📡</div>
           <div class="svc-info">
             <div class="svc-name">HDMI / Port Repair</div>
-            <div class="svc-desc">Damaged HDMI/USB ports, remote sensor not working, input switching issues, port replacement.</div>
+            <div class="svc-desc">Damaged HDMI/USB ports, remote sensor nahi chal raha, input switching issues, port replacement.</div>
             <div class="svc-price">
               <span class="price-now">₹449</span>
               <span class="price-old">₹599</span>
@@ -505,7 +798,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <div class="svc-img">🏠</div>
           <div class="svc-info">
             <div class="svc-name">TV Installation / Wall Mount</div>
-            <div class="svc-desc">Fresh TV installation or wall mounting. Proper cable management, HDMI setup included.</div>
+            <div class="svc-desc">Fresh TV installation ya wall mounting. Proper cable management, HDMI setup included.</div>
             <div class="svc-price">
               <span class="price-now">₹399</span>
               <span class="price-old">₹549</span>
@@ -520,38 +813,67 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
     <!-- PRICING -->
     <div class="sec" id="pricing">
       <div class="sec-head"><h2>💰 Price List 2026 <span class="sec-tag">Transparent</span></h2></div>
-      <table class="price-table">
-        <tr><td>TV Diagnosis / Check-Up</td><td>₹249 (adjusted in repair)</td></tr>
-        <tr><td>Power Board Repair</td><td>Starting ₹699</td></tr>
-        <tr><td>Motherboard Repair</td><td>Starting ₹999</td></tr>
-        <tr><td>Backlight / LED Strip Repair</td><td>Starting ₹599</td></tr>
-        <tr><td>Screen Panel Replacement</td><td>Quote after inspection</td></tr>
-        <tr><td>Sound / Speaker Repair</td><td>Starting ₹499</td></tr>
-        <tr><td>HDMI / Port Repair</td><td>Starting ₹449</td></tr>
-        <tr><td>Smart TV Software Fix</td><td>Starting ₹399</td></tr>
-        <tr><td>TV Wall Mount Installation</td><td>Starting ₹399</td></tr>
-        <tr><td>Home Visit Charge</td><td>₹199 (adjusted in repair)</td></tr>
-      </table>
-      <p style="padding:0 26px 20px;font-size:.8rem;color:var(--grey)">* Final price depends on brand, model, and parts needed. Free quote before any work begins.</p>
+      <div class="price-wrap">
+        <table class="price-table">
+          <tr><td>TV Diagnosis / Check-Up</td><td>₹249 (repair mein adjust hoga)</td></tr>
+          <tr><td>Power Board Repair</td><td>Starting ₹699</td></tr>
+          <tr><td>Motherboard Repair</td><td>Starting ₹999</td></tr>
+          <tr><td>Backlight / LED Strip</td><td>Starting ₹599</td></tr>
+          <tr><td>Screen Panel Replacement</td><td>Quote after inspection</td></tr>
+          <tr><td>Sound / Speaker Repair</td><td>Starting ₹499</td></tr>
+          <tr><td>HDMI / Port Repair</td><td>Starting ₹449</td></tr>
+          <tr><td>Smart TV Software Fix</td><td>Starting ₹399</td></tr>
+          <tr><td>TV Wall Mount Installation</td><td>Starting ₹399</td></tr>
+          <tr><td>Home Visit Charge</td><td>₹199 (repair mein adjust hoga)</td></tr>
+        </table>
+        <p style="margin-top:12px;font-size:.78rem;color:var(--grey)">* Final price brand, model aur parts par depend karta hai. Kaam shuru hone se pehle free quote milega.</p>
+      </div>
     </div>
 
-    <!-- COMPARE -->
+    <!-- WHY US / COMPARE (SuperSavvy style) -->
     <div class="sec">
-      <div class="sec-head"><h2>🏆 Why Brothers Electronics?</h2></div>
-      <table class="compare-table">
-        <thead>
-          <tr><th>Feature</th><th style="color:var(--blue)">Brothers Electronics</th><th>Others</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Repair Warranty</td><td class="highlight-col yes">90 Days</td><td class="no">30 Days or none</td></tr>
-          <tr><td>Response Time</td><td class="highlight-col yes">Same Day</td><td class="no">1–3 Days</td></tr>
-          <tr><td>Home Visit</td><td class="highlight-col yes">✅ Included</td><td class="no">❌ Extra charge</td></tr>
-          <tr><td>Free Diagnosis</td><td class="highlight-col yes">✅ Yes</td><td class="no">❌ Not always</td></tr>
-          <tr><td>Genuine Spare Parts</td><td class="highlight-col yes">✅ Always</td><td class="no">❌ Sometimes local</td></tr>
-          <tr><td>Hidden Charges</td><td class="highlight-col yes">❌ Never</td><td class="no">⚠️ Sometimes</td></tr>
-          <tr><td>Open on Sunday</td><td class="highlight-col yes">✅ Yes</td><td class="no">❌ Mostly closed</td></tr>
-        </tbody>
-      </table>
+      <div class="sec-head"><h2>🏆 Brothers Electronics vs Others</h2></div>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Brothers Electronics</th>
+              <th>Others</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Repair Warranty</td><td class="yes">90 Days ✅</td><td class="no">30 Days or none</td></tr>
+            <tr><td>Response Time</td><td class="yes">Same Day ✅</td><td class="no">1–3 Days</td></tr>
+            <tr><td>Home Visit</td><td class="yes">✅ Included Free</td><td class="no">❌ Extra charge</td></tr>
+            <tr><td>Free Diagnosis</td><td class="yes">✅ Yes</td><td class="no">❌ Not always</td></tr>
+            <tr><td>Genuine Spare Parts</td><td class="yes">✅ Always</td><td class="no">❌ Sometimes local</td></tr>
+            <tr><td>Hidden Charges</td><td class="yes">❌ Never</td><td class="no">⚠️ Sometimes</td></tr>
+            <tr><td>Open on Sunday</td><td class="yes">✅ Yes</td><td class="no">❌ Mostly closed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- BRANDS -->
+    <div class="sec">
+      <div class="sec-head"><h2>🔧 Brands We Repair <span class="sec-tag-green">All Major Brands</span></h2></div>
+      <div class="brands-grid">
+        <span class="brand-chip">Samsung</span>
+        <span class="brand-chip">LG</span>
+        <span class="brand-chip">Sony</span>
+        <span class="brand-chip">Panasonic</span>
+        <span class="brand-chip">MI / Xiaomi</span>
+        <span class="brand-chip">OnePlus</span>
+        <span class="brand-chip">TCL</span>
+        <span class="brand-chip">Vu</span>
+        <span class="brand-chip">Philips</span>
+        <span class="brand-chip">Hisense</span>
+        <span class="brand-chip">Thomson</span>
+        <span class="brand-chip">Kodak</span>
+        <span class="brand-chip">Videocon</span>
+        <span class="brand-chip">+ All Others</span>
+      </div>
     </div>
 
     <!-- REVIEWS -->
@@ -562,37 +884,37 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <div>
             <div class="big-num">4.9</div>
             <div class="big-stars">★★★★★</div>
-            <div class="big-count">Based on 500+ repairs</div>
+            <div class="big-count">500+ repairs se</div>
           </div>
           <div class="bar-rows">
             <div class="bar-row"><span class="bar-lbl">5</span><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div><span class="bar-cnt">460</span></div>
             <div class="bar-row"><span class="bar-lbl">4</span><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><span class="bar-cnt">30</span></div>
             <div class="bar-row"><span class="bar-lbl">3</span><div class="bar-track"><div class="bar-fill" style="width:1.5%"></div></div><span class="bar-cnt">8</span></div>
             <div class="bar-row"><span class="bar-lbl">2</span><div class="bar-track"><div class="bar-fill" style="width:.5%"></div></div><span class="bar-cnt">2</span></div>
-            <div class="bar-row"><span class="bar-lbl">1</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-cnt">0</span></div>
+            <div class="bar-row"><span class="bar-lbl">1</span><div class="bar-track"><div class="bar-fill" style="width:0"></div></div><span class="bar-cnt">0</span></div>
           </div>
         </div>
-        <div class="reviews-list">
-          <div class="rev">
-            <div class="rev-top"><div class="rev-av">AV</div><div><div class="rev-name">Amit Verma</div><div class="rev-date">June 2026 · Baprola, Delhi</div></div><div style="margin-left:auto"><div class="rev-stars">★★★★★</div></div></div>
-            <div class="rev-text">Samsung 55" ka display power surge ke baad band ho gaya tha. Same morning technician aaya, 2 ghante mein sahi ho gaya. Bilkul fair price. Highly recommended!</div>
-            <div class="rev-svc">Service: Screen Repair</div>
-          </div>
-          <div class="rev">
-            <div class="rev-top"><div class="rev-av">PM</div><div><div class="rev-name">Priya Mehta</div><div class="rev-date">May 2026 · Dwarka, Delhi</div></div><div style="margin-left:auto"><div class="rev-stars">★★★★★</div></div></div>
-            <div class="rev-text">Very professional. Technician ne pehle problem explain ki, phir kaam shuru kiya. No hidden charges. LG TV now working perfectly with 90-day warranty.</div>
-            <div class="rev-svc">Service: Power Board Repair</div>
-          </div>
-          <div class="rev">
-            <div class="rev-top"><div class="rev-av">RS</div><div><div class="rev-name">Rakesh Singh</div><div class="rev-date">Apr 2026 · Rohini, Delhi</div></div><div style="margin-left:auto"><div class="rev-stars">★★★★★</div></div></div>
-            <div class="rev-text">Home visit super convenient tha — time pe aaye, Sony Bravia ka HDMI port ek ghante mein fix. Wall mount bhi nahi utarna pada. Dobara zaroor bulaunga.</div>
-            <div class="rev-svc">Service: HDMI Port Repair</div>
-          </div>
-          <div class="rev">
-            <div class="rev-top"><div class="rev-av">SK</div><div><div class="rev-name">Suresh Kumar</div><div class="rev-date">Mar 2026 · Uttam Nagar, Delhi</div></div><div style="margin-left:auto"><div class="rev-stars">★★★★★</div></div></div>
-            <div class="rev-text">Smart TV mein Wi-Fi connect nahi ho raha tha. Brothers Electronics ne software fix kar diya — 45 minutes mein. Bahut hi trustworthy service hai.</div>
-            <div class="rev-svc">Service: Smart TV Software Fix</div>
-          </div>
+      </div>
+      <div class="reviews-list">
+        <div class="rev">
+          <div class="rev-top"><div class="rev-av">AV</div><div><div class="rev-name">Amit Verma</div><div class="rev-date">June 2026 · Baprola, Delhi</div></div><div style="margin-left:auto"><div class="rev-stars">★★★★★</div></div></div>
+          <div class="rev-text">Samsung 55" ka display power surge ke baad band ho gaya tha. Same morning technician aaya, 2 ghante mein sahi ho gaya. Bilkul fair price. Highly recommended!</div>
+          <div class="rev-svc">Service: Screen Repair</div>
+        </div>
+        <div class="rev">
+          <div class="rev-top"><div class="rev-av">PM</div><div><div class="rev-name">Priya Mehta</div><div class="rev-date">May 2026 · Dwarka, Delhi</div></div><div style="margin-left:auto"><div class="rev-stars">★★★★★</div></div></div>
+          <div class="rev-text">Very professional. Technician ne pehle problem explain ki, phir kaam shuru kiya. No hidden charges. LG TV now working perfectly with 90-day warranty.</div>
+          <div class="rev-svc">Service: Power Board Repair</div>
+        </div>
+        <div class="rev">
+          <div class="rev-top"><div class="rev-av">RS</div><div><div class="rev-name">Rakesh Singh</div><div class="rev-date">Apr 2026 · Rohini, Delhi</div></div><div style="margin-left:auto"><div class="rev-stars">★★★★★</div></div></div>
+          <div class="rev-text">Home visit super convenient tha — time pe aaye, Sony Bravia ka HDMI port ek ghante mein fix. Wall mount bhi nahi utarna pada. Dobara zaroor bulaunga.</div>
+          <div class="rev-svc">Service: HDMI Port Repair</div>
+        </div>
+        <div class="rev">
+          <div class="rev-top"><div class="rev-av">SK</div><div><div class="rev-name">Suresh Kumar</div><div class="rev-date">Mar 2026 · Uttam Nagar, Delhi</div></div><div style="margin-left:auto"><div class="rev-stars">★★★★★</div></div></div>
+          <div class="rev-text">Smart TV mein Wi-Fi connect nahi ho raha tha. Brothers Electronics ne software fix kar diya — 45 minutes mein. Bahut trustworthy service hai.</div>
+          <div class="rev-svc">Service: Smart TV Software Fix</div>
         </div>
       </div>
     </div>
@@ -635,7 +957,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
     <!-- AREAS -->
     <div class="sec" id="contact">
       <div class="sec-head"><h2>📍 Areas We Serve in West Delhi</h2></div>
-      <div style="padding:16px 26px 22px">
+      <div style="padding:16px 24px 22px">
         <div class="areas-list">
           <span class="area-chip">Baprola</span><span class="area-chip">Jai Vihar</span>
           <span class="area-chip">Uttam Nagar</span><span class="area-chip">Dwarka</span>
@@ -647,7 +969,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
           <span class="area-chip">Ramesh Nagar</span><span class="area-chip">+ Nearby Areas</span>
         </div>
         <div style="margin-top:22px;border-radius:12px;overflow:hidden;border:1px solid var(--border)">
-          <iframe src="https://maps.google.com/maps?q=Jai+Vihar+Baprola+Delhi+110043&output=embed" width="100%" height="300" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://maps.google.com/maps?q=Jai+Vihar+Baprola+Delhi+110043&output=embed" width="100%" height="280" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -666,17 +988,17 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
     <div class="sid-card">
       <h3>✅ Our Promise</h3>
       <div class="trust-item"><div class="t-icon">⚡</div><div><div class="t-title">Same-Day Service</div><div class="t-sub">Technician in 2–4 hours</div></div></div>
-      <div class="trust-item"><div class="t-icon">🛡️</div><div><div class="t-title">90-Day Warranty</div><div class="t-sub">On every repair we do</div></div></div>
+      <div class="trust-item"><div class="t-icon">🛡️</div><div><div class="t-title">90-Day Warranty</div><div class="t-sub">Har repair par</div></div></div>
       <div class="trust-item"><div class="t-icon">💰</div><div><div class="t-title">No Hidden Charges</div><div class="t-sub">Quote before work starts</div></div></div>
       <div class="trust-item"><div class="t-icon">🔩</div><div><div class="t-title">Genuine Spare Parts</div><div class="t-sub">OEM quality parts only</div></div></div>
-      <div class="trust-item"><div class="t-icon">🏠</div><div><div class="t-title">Home Visit Free</div><div class="t-sub">No need to uninstall TV</div></div></div>
+      <div class="trust-item"><div class="t-icon">🏠</div><div><div class="t-title">Home Visit Free</div><div class="t-sub">TV utaarna nahi padega</div></div></div>
     </div>
 
     <div class="sid-card">
       <h3>📍 Workshop</h3>
-      <p style="font-size:.85rem;color:var(--grey);line-height:1.7">Shop No. F-9, F Block Market,<br>Jai Vihar, Baprola,<br>Delhi – 110043<br><br>
+      <p style="font-size:.83rem;color:var(--grey);line-height:1.8">Shop No. F-9, F Block Market,<br>Jai Vihar, Baprola,<br>Delhi – 110043<br><br>
       <strong style="color:var(--navy)">Hours:</strong> Mon–Sun, 9 AM – 7 PM<br>
-      <strong style="color:var(--navy)">Email:</strong> <a href="mailto:varunraj000986@gmail.com" style="color:var(--blue);font-size:.82rem">varunraj000986@gmail.com</a></p>
+      <strong style="color:var(--navy)">Email:</strong> <a href="mailto:varunraj000986@gmail.com" style="color:var(--primary);font-size:.8rem">varunraj000986@gmail.com</a></p>
     </div>
   </div>
 </div><!-- /page-body -->
@@ -691,8 +1013,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="f-logo">Brothers <span>Electronics</span></div>
-      <p style="font-size:.83rem;max-width:280px;line-height:1.7">Delhi's trusted TV repair experts. All brands, home visit, genuine parts, 90-day warranty.</p>
+      <div class="f-logo"><div class="f-logo-icon">📺</div>Brothers <span>Electronics</span></div>
+      <p style="font-size:.82rem;max-width:280px;line-height:1.7">Delhi's trusted TV repair experts. All brands, home visit, genuine parts, 90-day warranty.</p>
       <p style="margin-top:12px">📞 <a href="tel:+919891056716" style="color:var(--gold);text-decoration:none;font-weight:700">98910 56716</a></p>
     </div>
     <div>
@@ -722,6 +1044,23 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 5%;font-si
 </footer>
 
 <script>
+function toggleMobileNav(){
+  const d=document.getElementById('mobile-nav-drawer');
+  d.classList.toggle('open');
+}
+function closeMobileNav(){
+  document.getElementById('mobile-nav-drawer').classList.remove('open');
+}
+function bookNowMobile(){
+  const n=document.getElementById('mb-name').value.trim();
+  const p=document.getElementById('mb-phone').value.trim();
+  const b=document.getElementById('mb-brand').value;
+  const s=document.getElementById('mb-svc').value;
+  if(!n||!p||!b||!s){alert('Please fill Name, Phone, Brand and Service type.');return;}
+  document.getElementById('mb-success').style.display='block';
+  const btn=document.querySelector('.mobile-booking-section .book-now-btn');
+  btn.disabled=true;btn.style.opacity='.6';btn.textContent='✓ Booking Received!';
+}
 function bookNow(){
   const n=document.getElementById('b-name').value.trim();
   const p=document.getElementById('b-phone').value.trim();
