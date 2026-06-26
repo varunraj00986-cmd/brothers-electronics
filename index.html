@@ -1051,25 +1051,46 @@ function toggleMobileNav(){
 function closeMobileNav(){
   document.getElementById('mobile-nav-drawer').classList.remove('open');
 }
+function sendToWhatsApp(name, phone, brand, svc, slot, prob){
+  const msg =
+    "🙏 *Namaskar Brothers Electronics!*\n\n" +
+    "📋 *Naya Booking Request:*\n" +
+    "👤 Naam: " + name + "\n" +
+    "📞 Phone: " + phone + "\n" +
+    "📺 TV Brand: " + brand + "\n" +
+    "🔧 Service: " + svc + "\n" +
+    (slot ? "🕐 Time Slot: " + slot + "\n" : "") +
+    (prob ? "❗ Problem: " + prob + "\n" : "") +
+    "\nKripya jaldi callback karein. Shukriya! 🙏";
+  const url = "https://wa.me/919891056716?text=" + encodeURIComponent(msg);
+  window.open(url, '_blank');
+}
+
 function bookNowMobile(){
   const n=document.getElementById('mb-name').value.trim();
   const p=document.getElementById('mb-phone').value.trim();
   const b=document.getElementById('mb-brand').value;
   const s=document.getElementById('mb-svc').value;
-  if(!n||!p||!b||!s){alert('Please fill Name, Phone, Brand and Service type.');return;}
+  const sl=document.getElementById('mb-slot').value;
+  const pr=document.getElementById('mb-prob').value.trim();
+  if(!n||!p||!b||!s){alert('Kripya Naam, Phone, Brand aur Service zaroor bharein.');return;}
   document.getElementById('mb-success').style.display='block';
   const btn=document.querySelector('.mobile-booking-section .book-now-btn');
-  btn.disabled=true;btn.style.opacity='.6';btn.textContent='✓ Booking Received!';
+  btn.disabled=true;btn.style.opacity='.6';btn.textContent='✓ WhatsApp par bheja ja raha hai…';
+  sendToWhatsApp(n,p,b,s,sl,pr);
 }
 function bookNow(){
   const n=document.getElementById('b-name').value.trim();
   const p=document.getElementById('b-phone').value.trim();
   const b=document.getElementById('b-brand').value;
   const s=document.getElementById('b-svc').value;
-  if(!n||!p||!b||!s){alert('Please fill Name, Phone, Brand and Service type.');return;}
+  const sl=document.getElementById('b-slot').value;
+  const pr=document.getElementById('b-prob').value.trim();
+  if(!n||!p||!b||!s){alert('Kripya Naam, Phone, Brand aur Service zaroor bharein.');return;}
   document.getElementById('bc-success').style.display='block';
-  const btn=document.querySelector('.book-now-btn');
-  btn.disabled=true;btn.style.opacity='.6';btn.textContent='✓ Booking Received!';
+  const btn=document.querySelector('#book-form .book-now-btn');
+  btn.disabled=true;btn.style.opacity='.6';btn.textContent='✓ WhatsApp par bheja ja raha hai…';
+  sendToWhatsApp(n,p,b,s,sl,pr);
 }
 function addService(btn,name){
   btn.textContent='✓ Added';btn.classList.add('added');btn.disabled=true;
